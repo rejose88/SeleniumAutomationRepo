@@ -19,6 +19,12 @@ public class HandlingWebElements extends Base {
 		//click()
 		showMessageButton.click();
 		
+		//isDisplayed()
+		System.out.println("showMessageButton is displayed or not? "+showMessageButton.isDisplayed());
+		
+		//isEnabled()
+		System.out.println("showMessageButton is enabled or not? "+showMessageButton.isEnabled());
+		
 		WebElement messageField= driver.findElement(By.xpath("//div[@id='message-one']"));
 		//getText()
 		System.out.println("Text on the message field is :"+messageField.getText());
@@ -27,11 +33,12 @@ public class HandlingWebElements extends Base {
 		messageBox.clear();
 		
 		WebElement getTotalButton = driver.findElement(By.id("button-two"));
-		//tagName()
+		//getTagName()
 		System.out.println("Tag name is : "+getTotalButton.getTagName());
 		
 		//getCssValue()
 		System.out.println("Background colour of Show Message Button :"+showMessageButton.getCssValue("background-color"));
+		
 		
 	}
 	public static void main(String[] args) {

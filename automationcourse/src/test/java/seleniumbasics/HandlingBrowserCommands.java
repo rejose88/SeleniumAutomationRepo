@@ -9,7 +9,7 @@ public class HandlingBrowserCommands extends Base {
 		String url=driver.getCurrentUrl();
 		System.out.println(url);
 		String id=driver.getWindowHandle();
-		System.out.println(id);
+		System.out.println("window handle: "+id);
 		String source=driver.getPageSource();
 		System.out.println(source);	
 		
