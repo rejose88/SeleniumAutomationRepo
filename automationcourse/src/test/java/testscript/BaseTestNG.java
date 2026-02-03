@@ -19,11 +19,11 @@ public WebDriver driver;
 	}
 	
 
-@AfterMethod
+/*@AfterMethod
 	public void browserCloseQuit()
 	{
 		driver.quit();
-	}
+	}   */
 
 
 }

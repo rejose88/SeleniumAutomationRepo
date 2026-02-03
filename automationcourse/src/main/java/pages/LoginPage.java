@@ -15,17 +15,17 @@ public class LoginPage {
 		PageFactory.initElements(driver, this);
 	}
 		
-	@FindBy(id="user-name")WebElement user_name;
-	@FindBy(id="password")WebElement password;
+	@FindBy(id="user-name")WebElement user_name_field;
+	@FindBy(id="password")WebElement password_field;
 	@FindBy(id="login-button")WebElement login_button;	
 	
-	public void enterUsernameOnUserNameField()
+	public void enterUsernameOnUserNameField(String username)
 	{
-		user_name.sendKeys("standard_user");
+		user_name_field.sendKeys(username);
 	}
-	public void enterPasswordOnPasswordField()
+	public void enterPasswordOnPasswordField(String password)
 	{
-		password.sendKeys("secret_sauce");
+		password_field.sendKeys(password);
 	}
 	public void clickOnLoginButton()
 	{
