@@ -4,12 +4,12 @@ import java.io.IOException;
 
 import org.testng.annotations.Test;
 
-import automationcore.BaseTestNG;
+import automationcore.Base;
 import pages.LoginPage;
 import utilities.ExcelUtility;
 
-public class LoginTest extends BaseTestNG {
-	
+public class LoginTest extends Base {
+
 	@Test
 	public void verifyUserLoginWithValidUsernameAndValidPassword() throws IOException
 	{
@@ -18,7 +18,6 @@ public class LoginTest extends BaseTestNG {
 		LoginPage loginpage= new LoginPage(driver);
 		loginpage.enterUsernameOnUsernameField(username);
 		loginpage.enterPasswordOnPasswordField(password);
-		loginpage.clickOnRememberMeCheckBox();
 		loginpage.clickonSigninButton();
 	}
 	
@@ -30,7 +29,6 @@ public class LoginTest extends BaseTestNG {
 		LoginPage loginpage= new LoginPage(driver);
 		loginpage.enterUsernameOnUsernameField(username);
 		loginpage.enterPasswordOnPasswordField(password);
-		loginpage.clickOnRememberMeCheckBox();
 		loginpage.clickonSigninButton();
 	}
 	
@@ -42,7 +40,6 @@ public class LoginTest extends BaseTestNG {
 		LoginPage loginpage= new LoginPage(driver);
 		loginpage.enterUsernameOnUsernameField(username);
 		loginpage.enterPasswordOnPasswordField(password);
-		loginpage.clickOnRememberMeCheckBox();
 		loginpage.clickonSigninButton();
 	}
 	
@@ -54,10 +51,6 @@ public class LoginTest extends BaseTestNG {
 		LoginPage loginpage= new LoginPage(driver);
 		loginpage.enterUsernameOnUsernameField(username);
 		loginpage.enterPasswordOnPasswordField(password);
-		loginpage.clickOnRememberMeCheckBox();
 		loginpage.clickonSigninButton();
 	}
-	
-	
-	
 }

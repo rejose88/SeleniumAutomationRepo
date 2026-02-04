@@ -19,7 +19,6 @@ public class LoginPage {
 	
 	@FindBy(name="username")WebElement username_field;
 	@FindBy(name="password")WebElement password_field;
-	@FindBy(xpath="//label[@for='remember']") WebElement remember_me_check_box;
 	@FindBy(xpath="//button[@type='submit' and @class='btn btn-dark btn-block']" )WebElement signin_button;
 	
 	public void enterUsernameOnUsernameField(String username)
@@ -30,11 +29,6 @@ public class LoginPage {
 	public void enterPasswordOnPasswordField(String password)
 	{
 		password_field.sendKeys(password);
-	}
-	
-	public void clickOnRememberMeCheckBox()
-	{
-		remember_me_check_box.click();
 	}
 	
 	public void clickonSigninButton()
