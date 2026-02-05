@@ -32,6 +32,6 @@ public class ExcelUtility {
 		XSSFRow r=s.getRow(a);
 		XSSFCell c=r.getCell(b);		//Typecasting - conversion of one data type to another
 		int y= (int) c.getNumericCellValue();
-		return y;
+		return y; 
 	}
 }

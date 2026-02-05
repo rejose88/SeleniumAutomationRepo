@@ -1,7 +1,5 @@
 package pages;
 
-import java.awt.print.PageFormat;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -19,7 +17,7 @@ public class LoginPage {
 	
 	@FindBy(name="username")WebElement username_field;
 	@FindBy(name="password")WebElement password_field;
-	@FindBy(xpath="//button[@type='submit' and @class='btn btn-dark btn-block']" )WebElement signin_button;
+	@FindBy(xpath="//button[@type='submit']" )WebElement signin_button;
 	
 	public void enterUsernameOnUsernameField(String username)
 	{
