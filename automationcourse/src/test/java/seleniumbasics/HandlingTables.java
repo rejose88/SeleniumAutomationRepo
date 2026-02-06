@@ -20,7 +20,7 @@ public class HandlingTables extends Base {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		HandlingTables tableHandle= new HandlingTables();
+		HandlingTables tableHandle= new HandlingTables(); 
 		tableHandle.initialiseDriver();
 		tableHandle.tableHandling();
 
