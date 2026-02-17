@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2026-02-03T23:27:20 IST" name="Default suite" finished-at="2026-02-03T23:27:29 IST" duration-ms="9270">
+    <groups>
+    </groups>
+    <test started-at="2026-02-03T23:27:20 IST" name="Default test" finished-at="2026-02-03T23:27:29 IST" duration-ms="9270">
+      <class name="testscript.LoginTest">
+        <test-method is-config="true" signature="initialiseDriver()[pri:0, instance:testscript.LoginTest@4135c3b]" started-at="2026-02-03T23:27:20 IST" name="initialiseDriver" finished-at="2026-02-03T23:27:21 IST" duration-ms="1723" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialiseDriver -->
+        <test-method signature="verifyUserLoginWithInvalidUsernameAndInvalidPassword()[pri:0, instance:testscript.LoginTest@4135c3b]" started-at="2026-02-03T23:27:21 IST" name="verifyUserLoginWithInvalidUsernameAndInvalidPassword" finished-at="2026-02-03T23:27:22 IST" duration-ms="543" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyUserLoginWithInvalidUsernameAndInvalidPassword -->
+        <test-method is-config="true" signature="initialiseDriver()[pri:0, instance:testscript.LoginTest@4135c3b]" started-at="2026-02-03T23:27:22 IST" name="initialiseDriver" finished-at="2026-02-03T23:27:23 IST" duration-ms="1441" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialiseDriver -->
+        <test-method signature="verifyUserLoginWithInvalidUsernameAndValidPassword()[pri:0, instance:testscript.LoginTest@4135c3b]" started-at="2026-02-03T23:27:23 IST" name="verifyUserLoginWithInvalidUsernameAndValidPassword" finished-at="2026-02-03T23:27:24 IST" duration-ms="554" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyUserLoginWithInvalidUsernameAndValidPassword -->
+        <test-method is-config="true" signature="initialiseDriver()[pri:0, instance:testscript.LoginTest@4135c3b]" started-at="2026-02-03T23:27:24 IST" name="initialiseDriver" finished-at="2026-02-03T23:27:26 IST" duration-ms="1589" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialiseDriver -->
+        <test-method signature="verifyUserLoginWithValidUsernameAndInvalidPassword()[pri:0, instance:testscript.LoginTest@4135c3b]" started-at="2026-02-03T23:27:26 IST" name="verifyUserLoginWithValidUsernameAndInvalidPassword" finished-at="2026-02-03T23:27:26 IST" duration-ms="519" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyUserLoginWithValidUsernameAndInvalidPassword -->
+        <test-method is-config="true" signature="initialiseDriver()[pri:0, instance:testscript.LoginTest@4135c3b]" started-at="2026-02-03T23:27:26 IST" name="initialiseDriver" finished-at="2026-02-03T23:27:28 IST" duration-ms="2343" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialiseDriver -->
+        <test-method signature="verifyUserLoginWithValidUsernameAndPassword()[pri:0, instance:testscript.LoginTest@4135c3b]" started-at="2026-02-03T23:27:28 IST" name="verifyUserLoginWithValidUsernameAndPassword" finished-at="2026-02-03T23:27:29 IST" duration-ms="508" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyUserLoginWithValidUsernameAndPassword -->
+      </class> <!-- testscript.LoginTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
