@@ -2,40 +2,43 @@ package testscript;
 
 import java.io.IOException;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import automationcore.Base;
+import constant.Constant;
 import pages.AdminUsersPage;
 import pages.HomePage;
 import pages.LoginPage;
-import pages.ManageNewsPage;
 import utilities.ExcelUtility;
 import utilities.FakerUtility;
 
 public class AdminUsersTest extends Base {
+	HomePage homepage;
+	AdminUsersPage adminuserspage;
 
 	@Test(priority = 1, description = "Verifying if Admin is able to add new user")
 	public void verifyAdminIsAbleToAddNewUser() throws IOException {
 		String username = ExcelUtility.getStringData(0, 0, "LoginPage");
 		String password = ExcelUtility.getStringData(0, 1, "LoginPage");
 		LoginPage loginpage = new LoginPage(driver);
-		loginpage.enterUsernameOnUsernameField(username);
-		loginpage.enterPasswordOnPasswordField(password);
-		loginpage.clickonSigninButton();
+		loginpage.enterUsernameOnUsernameField(username).enterPasswordOnPasswordField(password);
+		homepage = loginpage.clickonSigninButton();
+		adminuserspage = homepage.clickOnAdminUsersMoreInfo();
+		adminuserspage.clickOnNewUserButton();
 
-		HomePage homepage = new HomePage(driver);
-		homepage.clickOnAdminUsersMoreInfo();
-		AdminUsersPage admin_users_page = new AdminUsersPage(driver);
-		admin_users_page.clickOnNewUserButton();
+		// Using FakerUtility to generate random username and password for the new user
+		FakerUtility faker = new FakerUtility(); // Create an instance of FakerUtility
+		String newUserName = faker.createRandomUsername(); // method implemented in FakerUtility. It generate a
+															// random username using FakerUtility
+		adminuserspage.enterNewUsername(newUserName);
+		String newPassword = faker.createRandomPassword(); // Generate a random password using FakerUtility
+		adminuserspage.enterPasswordForNewUser(newPassword);
 
-		FakerUtility faker = new FakerUtility();
-		String newUserName = faker.createRandomUsername();
-		admin_users_page.enterNewUsername(newUserName);
-		String newPassword = faker.createRandomPassword();
-		admin_users_page.enterPasswordForNewUser(newPassword);
+		adminuserspage.selectUserTypeForNewUser().clickOnNewUserSaveButton();
 
-		admin_users_page.selectUserTypeForNewUser();
-		admin_users_page.clickOnNewUserSaveButton();
+		boolean user_created_successfully = adminuserspage.userCreatedSuccessfullyAlertDisplay();
+		Assert.assertTrue(user_created_successfully, Constant.USERCREATIONERROR);
 
 	}
 
@@ -45,18 +48,14 @@ public class AdminUsersTest extends Base {
 		String password = ExcelUtility.getStringData(0, 1, "LoginPage");
 
 		LoginPage loginpage = new LoginPage(driver);
-		loginpage.enterUsernameOnUsernameField(username);
-		loginpage.enterPasswordOnPasswordField(password);
-		loginpage.clickonSigninButton();
+		loginpage.enterUsernameOnUsernameField(username).enterPasswordOnPasswordField(password);
+		homepage = loginpage.clickonSigninButton();
+		adminuserspage = homepage.clickOnAdminUsersMoreInfo();
+		adminuserspage.clickOnSearchButton().enterTheUserNameToBeSearched().selectUserTypeForTheUserToBeSearched()
+				.clickOnSearchUsersSearchButton();
 
-		HomePage homepage = new HomePage(driver);
-		homepage.clickOnAdminUsersMoreInfo();
-
-		AdminUsersPage admin_users_page = new AdminUsersPage(driver);
-		admin_users_page.clickOnSearchButton();
-		admin_users_page.enterTheUserNameToBeSearched();
-		admin_users_page.selectUserTypeForTheUserToBeSearched();
-		admin_users_page.clickOnSearchUsersSearchButton();
+		boolean user_search_result = adminuserspage.userSearchedSuccessfully();
+		Assert.assertTrue(user_search_result, Constant.USERSEARCHERROR);
 
 	}
 
@@ -66,14 +65,13 @@ public class AdminUsersTest extends Base {
 		String password = ExcelUtility.getStringData(0, 1, "LoginPage");
 
 		LoginPage loginpage = new LoginPage(driver);
-		loginpage.enterUsernameOnUsernameField(username);
-		loginpage.enterPasswordOnPasswordField(password);
-		loginpage.clickonSigninButton();
+		loginpage.enterUsernameOnUsernameField(username).enterPasswordOnPasswordField(password);
+		homepage = loginpage.clickonSigninButton();
+		adminuserspage = homepage.clickOnAdminUsersMoreInfo();
+		adminuserspage.clickOnResetButton();
 
-		HomePage homepage = new HomePage(driver);
-		homepage.clickOnAdminUsersMoreInfo();
+		boolean user_refresh_display = adminuserspage.usersRefreshedSuccessfully();
+		Assert.assertTrue(user_refresh_display, Constant.USERRESETERROR);
 
-		AdminUsersPage admin_users_page = new AdminUsersPage(driver);
-		admin_users_page.clickOnResetButton();
 	}
 }

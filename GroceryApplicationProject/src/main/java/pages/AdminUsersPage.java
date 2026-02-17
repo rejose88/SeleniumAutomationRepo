@@ -6,9 +6,14 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
+import utilities.PageUtility;
+import utilities.WaitUtility;
+
 public class AdminUsersPage {
 
 	public WebDriver driver;
+	WaitUtility waitutility = new WaitUtility();
+	PageUtility pageutility = new PageUtility();
 
 	public AdminUsersPage(WebDriver driver) {
 		this.driver = driver;
@@ -31,51 +36,83 @@ public class AdminUsersPage {
 	WebElement save_new_user_button;
 	@FindBy(id = "un")
 	WebElement username_search_field;
-	@FindBy(id = "ut")
+	@FindBy(xpath = "//select[@id='ut']")
 	WebElement user_type_select_field;
 	@FindBy(xpath = "//button[@name='Search']")
 	WebElement admin_users_search_button;
+	@FindBy(xpath = "//h5[text()=' Alert!']")
+	WebElement user_created_successfully_alert;
+	@FindBy(xpath = "//table[@class='table table-bordered table-hover table-sm']/tbody/tr[1]/td")
+	WebElement user_search_result;
+	@FindBy(xpath = "//table[@class='table table-bordered table-hover table-sm']/tbody/tr[1]/td")
+	WebElement user_refresh_display;
 
-	public void clickOnNewUserButton() {
+	public AdminUsersPage clickOnNewUserButton() {
 		add_new_user_button.click();
+		return this;
 	}
 
-	public void enterNewUsername(String newUserName) {
+	public AdminUsersPage enterNewUsername(String newUserName) {
 		add_new_user_username_field.sendKeys(newUserName);
+		return this;
 	}
 
-	public void enterPasswordForNewUser(String newPassword) {
+	public AdminUsersPage enterPasswordForNewUser(String newPassword) {
 		add_new_user_password_field.sendKeys(newPassword);
+		return this;
 	}
 
-	public void selectUserTypeForNewUser() {
-		Select select = new Select(user_type_dropdown);
-		select.selectByValue("staff");
+	public AdminUsersPage selectUserTypeForNewUser() {
+
+		pageutility.selectDropdownWithValue(user_type_dropdown, "staff"); // calling pageutility class
+		return this;
+
 	}
 
-	public void clickOnNewUserSaveButton() {
+	public AdminUsersPage clickOnNewUserSaveButton() {
+		waitutility.waitUntilElementToBeClickable(driver, add_new_user_button); // calling waitutility class
 		save_new_user_button.click();
+		return this;
 	}
 
-	public void clickOnSearchButton() {
+	public AdminUsersPage clickOnSearchButton() {
 		search_user_button.click();
+		return this;
 	}
 
-	public void enterTheUserNameToBeSearched() {
+	public AdminUsersPage enterTheUserNameToBeSearched() {
 		username_search_field.sendKeys("aaron.suresh");
+		return this;
 	}
 
-	public void selectUserTypeForTheUserToBeSearched() {
-		Select select = new Select(user_type_select_field);
-		select.selectByVisibleText("Staff");
+	public AdminUsersPage selectUserTypeForTheUserToBeSearched() {
+		pageutility.selectDropdownWithVisibleText(user_type_select_field, "Staff"); // calling pageutility class
+		return this;
+
 	}
 
-	public void clickOnSearchUsersSearchButton() {
+	public AdminUsersPage clickOnSearchUsersSearchButton() {
 		admin_users_search_button.click();
+		return this;
 	}
 
-	public void clickOnResetButton() {
+	public AdminUsersPage clickOnResetButton() {
 		reset_user_button.click();
+		return this;
+	}
+
+	public boolean userCreatedSuccessfullyAlertDisplay() {
+		return user_created_successfully_alert.isDisplayed();
+	}
+
+	public boolean userSearchedSuccessfully() {
+
+		return user_search_result.isDisplayed();
+	}
+
+	public boolean usersRefreshedSuccessfully() {
+
+		return user_refresh_display.isDisplayed();
 	}
 
 }

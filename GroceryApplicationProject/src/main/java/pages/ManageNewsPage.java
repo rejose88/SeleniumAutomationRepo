@@ -28,33 +28,59 @@ public class ManageNewsPage {
 	WebElement manage_news_search_button;
 	@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/list-news']")
 	WebElement reset_news_button;
+	@FindBy(xpath = "//h5[text()=' Alert!']")
+	WebElement news_created_successfully_alert;
+	@FindBy(xpath = "//table[@class='table table-bordered table-hover table-sm']/tbody/tr[1]/td[1]")
+	WebElement news_search_result;
+	@FindBy(xpath = "//table[@class='table table-bordered table-hover table-sm']/tbody/tr[1]/td[1]")
+	WebElement news_refresh_display;
 
-	public void clickOnNewButton() {
+	public ManageNewsPage clickOnNewButton() {
 		new_news_button.click();
+		return this;
 	}
 
-	public void enterNewNewsOnTextField() {
+	public ManageNewsPage enterNewNewsOnTextField() {
 		add_new_news_field.sendKeys("Today's main news");
+		return this;
 	}
 
-	public void clickOnSaveNewsButton() {
+	public ManageNewsPage clickOnSaveNewsButton() {
 		save_news_button.click();
+		return this;
 	}
 
-	public void clickOnSearchNewsButton() {
+	public ManageNewsPage clickOnSearchNewsButton() {
 		search_news_button.click();
+		return this;
 	}
 
-	public void enterNewsToBeSearched() {
+	public ManageNewsPage enterNewsToBeSearched() {
 		manage_news_search_news_field.sendKeys("Today's main news");
+		return this;
 	}
 
-	public void clickOnSearchButton() {
+	public ManageNewsPage clickOnSearchButton() {
 		manage_news_search_button.click();
+		return this;
 	}
 
-	public void clickOnResetButton() {
+	public ManageNewsPage clickOnResetButton() {
 		reset_news_button.click();
+		return this;
 	}
 
+	public boolean newsCreatedSuccessfullyAlertDisplay() {
+		return news_created_successfully_alert.isDisplayed();
+	}
+
+	public boolean newsSearchedSuccessfully() {
+
+		return news_search_result.isDisplayed();
+	}
+
+	public boolean newsRefreshedSuccessfully() {
+
+		return news_refresh_display.isDisplayed();
+	}
 }

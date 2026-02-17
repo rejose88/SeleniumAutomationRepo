@@ -13,15 +13,12 @@ import org.openqa.selenium.io.FileHandler;
 public class ScreenshotUtility {
 	public void getScreenshot(WebDriver driver, String failedTestCase) throws IOException {
 
-		TakesScreenshot scrShot = (TakesScreenshot) driver; // predefined interface to capture screenshot.
+		TakesScreenshot scrShot = (TakesScreenshot) driver; // casting
 		File screenShot = scrShot.getScreenshotAs(OutputType.FILE); // capture screenshot and store it in file format.
 
-		String timeStamp = new SimpleDateFormat("dd_MM_yyyy_hh_mm_ss").format(new Date()); // get current date and time
-																							// to make unique name for
-																							// screenshot.
+		String timeStamp = new SimpleDateFormat("dd_MM_yyyy_hh_mm_ss").format(new Date());
 
-		File f1 = new File(System.getProperty("user.dir") + "//OutputScreenShot");// create file in directory to store
-																					// screenshot of failed test case.
+		File f1 = new File(System.getProperty("user.dir") + "//OutputScreenShot");
 		if (!f1.exists()) {
 
 			f1.mkdirs();

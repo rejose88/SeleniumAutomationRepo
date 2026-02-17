@@ -1,39 +1,63 @@
 package automationcore;
 
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.time.Duration;
+import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
 
+import constant.Constant;
 import utilities.ScreenshotUtility;
 
 public class Base {
 
 	public WebDriver driver;
+	Properties prop; // Global variable declaration for Properties class to read the data from
+						// properties file
+	FileInputStream f; // declaring FileInputStream class
 
-	@BeforeMethod
-	public void initialiseDriver() {
-		driver = new ChromeDriver();
-		driver.navigate().to("https://groceryapp.uniqassosiates.com/admin/login");
+	@BeforeMethod(alwaysRun = true)
+	@Parameters("browser")
+	public void initialiseDriver(String browser) throws Exception {
+
+		prop = new Properties(); // object creation for Properties class
+		f = new FileInputStream(Constant.CONFIGFILE);
+		prop.load(f);
+
+		if (browser.equalsIgnoreCase("chrome")) {
+			driver = new ChromeDriver();
+		} else if (browser.equalsIgnoreCase("firefox")) {
+			driver = new FirefoxDriver();
+		} else if (browser.equalsIgnoreCase("edge")) {
+			driver = new EdgeDriver();
+		} else {
+			throw new Exception("Invalid Browser");
+		}
+
+		driver.get(prop.getProperty("url"));
 		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5)); // implicit wait
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10)); // implicit wait
 	}
 
-	@AfterMethod
+	@AfterMethod(alwaysRun = true)
 	public void driverQuit(ITestResult iTestResult) throws IOException {
 
 		if (iTestResult.getStatus() == ITestResult.FAILURE) { // check if the test case is failed.
 
 			ScreenshotUtility screenShot = new ScreenshotUtility();
 			screenShot.getScreenshot(driver, iTestResult.getName());
-			// call getScreenshot method to capture screenshot of failed test case and pass
-			// driver and test case name as parameters.
+			// call getScreenshot method to capture screenshot of failed test case
 		}
-		// driver.quit();
+		driver.quit();
 
 	}
 }

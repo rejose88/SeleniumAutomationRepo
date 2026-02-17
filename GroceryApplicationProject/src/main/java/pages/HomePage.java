@@ -23,19 +23,24 @@ public class HomePage {
 	@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/list-admin' and @class='small-box-footer']")
 	WebElement admin_users_more_info_link;
 
-	public void clickOnAdminLogoutIcon() {
+	public HomePage clickOnAdminLogoutIcon() {
 		admin_logout_icon.click();
+		return this;
 	}
 
-	public void clickOnLogoutButton() {
+	public LoginPage clickOnLogoutButton() {
 		logout_button.click();
+		return new LoginPage(driver);
 	}
 
-	public void clickOnManageNewsMoreInfo() {
+	public ManageNewsPage clickOnManageNewsMoreInfo() {
 		managenews_moreinfo_link.click();
+		return new ManageNewsPage(driver);
 	}
 
-	public void clickOnAdminUsersMoreInfo() {
+	public AdminUsersPage clickOnAdminUsersMoreInfo() {
 		admin_users_more_info_link.click();
+		return new AdminUsersPage(driver);
 	}
+
 }

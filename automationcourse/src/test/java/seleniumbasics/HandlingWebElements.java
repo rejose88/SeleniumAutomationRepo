@@ -25,15 +25,15 @@ public class HandlingWebElements extends Base {
 		
 		WebElement showMessageButton= driver.findElement(By.xpath("//button[@id='button-one']"));
 		//click()
-		WebDriverWait wait= new WebDriverWait(driver, Duration.ofSeconds(5)); //explicit wait
+		
+		//explicit wait 
+		WebDriverWait wait= new WebDriverWait(driver, Duration.ofSeconds(5)); 
 		wait.until(ExpectedConditions.elementToBeClickable(showMessageButton));
 		
-		//fluent wait
+		//fluent wait 
 		Wait<WebDriver> fluent = new FluentWait<WebDriver>(driver).withTimeout(Duration.ofSeconds(5))
 				.pollingEvery(Duration.ofSeconds(1)).ignoring(NoSuchElementException.class);
 		fluent.until(ExpectedConditions.elementToBeClickable(showMessageButton));
-				
-		
 		showMessageButton.click();
 		
 		//isDisplayed()
