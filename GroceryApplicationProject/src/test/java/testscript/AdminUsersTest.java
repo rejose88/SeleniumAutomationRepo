@@ -28,14 +28,13 @@ public class AdminUsersTest extends Base {
 		adminuserspage.clickOnNewUserButton();
 
 		// Using FakerUtility to generate random username and password for the new user
-		FakerUtility faker = new FakerUtility(); // Create an instance of FakerUtility
-		String newUserName = faker.createRandomUsername(); // method implemented in FakerUtility. It generate a
-															// random username using FakerUtility
+		FakerUtility faker = new FakerUtility();
+		String newUserName = faker.createRandomUsername();
 		adminuserspage.enterNewUsername(newUserName);
-		String newPassword = faker.createRandomPassword(); // Generate a random password using FakerUtility
-		adminuserspage.enterPasswordForNewUser(newPassword);
-
-		adminuserspage.selectUserTypeForNewUser().clickOnNewUserSaveButton();
+		String newPassword = faker.createRandomPassword();
+		String new_user_type = ExcelUtility.getStringData(0, 2, "AdminUserPage");
+		adminuserspage.enterPasswordForNewUser(newPassword).selectUserTypeForNewUser(new_user_type)
+				.clickOnNewUserSaveButton();
 
 		boolean user_created_successfully = adminuserspage.userCreatedSuccessfullyAlertDisplay();
 		Assert.assertTrue(user_created_successfully, Constant.USERCREATIONERROR);
@@ -51,8 +50,10 @@ public class AdminUsersTest extends Base {
 		loginpage.enterUsernameOnUsernameField(username).enterPasswordOnPasswordField(password);
 		homepage = loginpage.clickonSigninButton();
 		adminuserspage = homepage.clickOnAdminUsersMoreInfo();
-		adminuserspage.clickOnSearchButton().enterTheUserNameToBeSearched().selectUserTypeForTheUserToBeSearched()
-				.clickOnSearchUsersSearchButton();
+		String username_to_be_searched = ExcelUtility.getStringData(0, 0, "AdminUserPage");
+		String user_type_to_be_searched = ExcelUtility.getStringData(0, 1, "AdminUserPage");
+		adminuserspage.clickOnSearchButton().enterTheUserNameToBeSearched(username_to_be_searched)
+				.selectUserTypeForTheUserToBeSearched(user_type_to_be_searched).clickOnSearchUsersSearchButton();
 
 		boolean user_search_result = adminuserspage.userSearchedSuccessfully();
 		Assert.assertTrue(user_search_result, Constant.USERSEARCHERROR);

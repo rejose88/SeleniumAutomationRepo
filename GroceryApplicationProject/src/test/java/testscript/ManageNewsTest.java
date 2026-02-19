@@ -26,7 +26,8 @@ public class ManageNewsTest extends Base {
 		loginpage.enterUsernameOnUsernameField(username).enterPasswordOnPasswordField(password);
 		homepage = loginpage.clickonSigninButton();
 		managenewspage = homepage.clickOnManageNewsMoreInfo();
-		managenewspage.clickOnNewButton().enterNewNewsOnTextField().clickOnSaveNewsButton();
+		String news_to_be_added = ExcelUtility.getStringData(0, 0, "ManageNewsPage");
+		managenewspage.clickOnNewButton().enterNewNewsOnTextField(news_to_be_added).clickOnSaveNewsButton();
 		boolean news_created_successfully = managenewspage.newsCreatedSuccessfullyAlertDisplay();
 		Assert.assertTrue(news_created_successfully, Constant.NEWSCREATIONERROR);
 	}
@@ -39,7 +40,8 @@ public class ManageNewsTest extends Base {
 		loginpage.enterUsernameOnUsernameField(username).enterPasswordOnPasswordField(password);
 		homepage = loginpage.clickonSigninButton();
 		managenewspage = homepage.clickOnManageNewsMoreInfo();
-		managenewspage.clickOnSearchNewsButton().enterNewsToBeSearched().clickOnSearchButton();
+		String news_to_be_searched = ExcelUtility.getStringData(0, 0, "ManageNewsPage");
+		managenewspage.clickOnSearchNewsButton().enterNewsToBeSearched(news_to_be_searched).clickOnSearchButton();
 		boolean news_search_result = managenewspage.newsSearchedSuccessfully();
 		Assert.assertTrue(news_search_result, Constant.NEWSSEARCHERROR);
 	}

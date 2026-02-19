@@ -11,7 +11,7 @@ import utilities.WaitUtility;
 public class LoginPage {
 
 	public WebDriver driver;
-	WaitUtility waitutility= new WaitUtility();
+	WaitUtility waitutility = new WaitUtility();
 
 	public LoginPage(WebDriver driver) {
 		this.driver = driver;

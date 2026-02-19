@@ -40,8 +40,8 @@ public class ManageNewsPage {
 		return this;
 	}
 
-	public ManageNewsPage enterNewNewsOnTextField() {
-		add_new_news_field.sendKeys("Today's main news");
+	public ManageNewsPage enterNewNewsOnTextField(String news_to_be_added) {
+		add_new_news_field.sendKeys(news_to_be_added);
 		return this;
 	}
 
@@ -55,8 +55,8 @@ public class ManageNewsPage {
 		return this;
 	}
 
-	public ManageNewsPage enterNewsToBeSearched() {
-		manage_news_search_news_field.sendKeys("Today's main news");
+	public ManageNewsPage enterNewsToBeSearched(String news_to_be_searched) {
+		manage_news_search_news_field.sendKeys(news_to_be_searched);
 		return this;
 	}
 

@@ -8,12 +8,11 @@ import org.testng.ITestResult;
 public class RetryMechanism implements IRetryAnalyzer {
 
 	private static final Logger LOG = (Logger) LogManager.getLogger("Retry.class");
-	private static final int maxTry = 2; // if test failed, retry 2 times
-	private int count = 0; // to count the number of retries
+	private static final int maxTry = 2; 
+	private int count = 0; 
 
 	@Override
-	public boolean retry(final ITestResult iTestResult) { // return true if you want to retry the failed test, false if
-															// not
+	public boolean retry(final ITestResult iTestResult) { 
 		if (!iTestResult.isSuccess()) {
 			if (this.count < maxTry) {
 				LOG.info("Retrying test " + iTestResult.getName() + " with status "
@@ -25,7 +24,7 @@ public class RetryMechanism implements IRetryAnalyzer {
 		return false;
 	}
 
-	public String getResultStatusName(final int status) {
+	public String getResultStatusName(final int status) { 
 		String resultName = null;
 		if (status == 1) {
 			resultName = "SUCCESS";

@@ -21,15 +21,15 @@ import utilities.ScreenshotUtility;
 public class Base {
 
 	public WebDriver driver;
-	Properties prop; // Global variable declaration for Properties class to read the data from
-						// properties file
-	FileInputStream f; // declaring FileInputStream class
+	Properties prop;
+
+	FileInputStream f;
 
 	@BeforeMethod(alwaysRun = true)
 	@Parameters("browser")
 	public void initialiseDriver(String browser) throws Exception {
 
-		prop = new Properties(); // object creation for Properties class
+		prop = new Properties();
 		f = new FileInputStream(Constant.CONFIGFILE);
 		prop.load(f);
 
@@ -51,11 +51,10 @@ public class Base {
 	@AfterMethod(alwaysRun = true)
 	public void driverQuit(ITestResult iTestResult) throws IOException {
 
-		if (iTestResult.getStatus() == ITestResult.FAILURE) { // check if the test case is failed.
+		if (iTestResult.getStatus() == ITestResult.FAILURE) {
 
 			ScreenshotUtility screenShot = new ScreenshotUtility();
 			screenShot.getScreenshot(driver, iTestResult.getName());
-			// call getScreenshot method to capture screenshot of failed test case
 		}
 		driver.quit();
 

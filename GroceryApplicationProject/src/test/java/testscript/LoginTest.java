@@ -28,7 +28,8 @@ public class LoginTest extends Base {
 		Assert.assertTrue(dashboard_display, Constant.VALIDCREDENTIALERROR);
 	}
 
-	@Test(priority = 2, description = "Validating user login with Invalid Username and Valid Password")
+	@Test(priority = 2, description = "Validating user login with Invalid Username and Valid Password", groups = {
+			"smoke" })
 	public void verifyUserLoginWithInvalidUsernameAndValidPassword() throws IOException {
 		String username = ExcelUtility.getStringData(1, 0, "LoginPage");
 		String password = ExcelUtility.getStringData(1, 1, "LoginPage");
@@ -49,8 +50,7 @@ public class LoginTest extends Base {
 		Assert.assertFalse(verifyAlertInSignInPageTile, Constant.INVALIDPASSWORDERROR);
 	}
 
-	@Test(priority = 4, description = "Validating user login with Invalid Username and Invalid Password", groups = {
-			"smoke" }, dataProvider = "loginProvider")
+	@Test(priority = 4, description = "Validating user login with Invalid Username and Invalid Password", dataProvider = "loginProvider")
 	public void verifyUserLoginWithInvalidUsernameAndInvalidPassword(String username, String password)
 			throws IOException {
 		LoginPage loginpage = new LoginPage(driver);

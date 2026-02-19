@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-02-17T11:30:10 IST" name="Suite" finished-at="2026-02-17T11:30:20 IST" duration-ms="9995">
+  <suite started-at="2026-02-19T22:22:37 IST" name="Suite" finished-at="2026-02-19T22:22:56 IST" duration-ms="18867">
     <groups>
     </groups>
-    <test started-at="2026-02-17T11:30:10 IST" name="Test" finished-at="2026-02-17T11:30:20 IST" duration-ms="9995">
-      <class name="testscript.HomeTest">
-        <test-method is-config="true" signature="initialiseDriver(java.lang.String)[pri:0, instance:testscript.HomeTest@769a1df5]" started-at="2026-02-17T11:30:16 IST" name="initialiseDriver" finished-at="2026-02-17T11:30:18 IST" duration-ms="1616" status="PASS">
+    <test started-at="2026-02-19T22:22:37 IST" name="Test" finished-at="2026-02-19T22:22:56 IST" duration-ms="18867">
+      <class name="testscript.ManageNewsTest">
+        <test-method is-config="true" signature="initialiseDriver(java.lang.String)[pri:0, instance:testscript.ManageNewsTest@7d322cad]" started-at="2026-02-19T22:22:44 IST" name="initialiseDriver" finished-at="2026-02-19T22:22:46 IST" duration-ms="1920" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,24 +18,22 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialiseDriver -->
-        <test-method signature="verifyUserIsAbleToSuccessfullyLogout()[pri:0, instance:testscript.HomeTest@769a1df5]" started-at="2026-02-17T11:30:18 IST" name="verifyUserIsAbleToSuccessfullyLogout" description="Validating whether user is able to logout successfully." finished-at="2026-02-17T11:30:19 IST" duration-ms="1273" status="PASS">
+        <test-method signature="verifyUserIsAbleToAddNewNews()[pri:1, instance:testscript.ManageNewsTest@7d322cad]" started-at="2026-02-19T22:22:46 IST" name="verifyUserIsAbleToAddNewNews" description="Creating new news" finished-at="2026-02-19T22:22:48 IST" duration-ms="2195" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyUserIsAbleToSuccessfullyLogout -->
-        <test-method is-config="true" signature="driverQuit(org.testng.ITestResult)[pri:0, instance:testscript.HomeTest@769a1df5]" started-at="2026-02-17T11:30:19 IST" name="driverQuit" finished-at="2026-02-17T11:30:20 IST" duration-ms="1149" status="PASS">
+        </test-method> <!-- verifyUserIsAbleToAddNewNews -->
+        <test-method is-config="true" signature="driverQuit(org.testng.ITestResult)[pri:0, instance:testscript.ManageNewsTest@7d322cad]" started-at="2026-02-19T22:22:48 IST" name="driverQuit" finished-at="2026-02-19T22:22:48 IST" duration-ms="0" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=verifyUserIsAbleToSuccessfullyLogout status=SUCCESS method=HomeTest.verifyUserIsAbleToSuccessfullyLogout()[pri:0, instance:testscript.HomeTest@769a1df5] output={null}]]]>
+                <![CDATA[[TestResult name=verifyUserIsAbleToAddNewNews status=SUCCESS method=ManageNewsTest.verifyUserIsAbleToAddNewNews()[pri:1, instance:testscript.ManageNewsTest@7d322cad] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- driverQuit -->
-      </class> <!-- testscript.HomeTest -->
-      <class name="testscript.LoginTest">
-        <test-method is-config="true" signature="initialiseDriver(java.lang.String)[pri:0, instance:testscript.LoginTest@1f9f6368]" started-at="2026-02-17T11:30:10 IST" name="initialiseDriver" finished-at="2026-02-17T11:30:12 IST" duration-ms="2264" status="PASS">
+        <test-method is-config="true" signature="initialiseDriver(java.lang.String)[pri:0, instance:testscript.ManageNewsTest@7d322cad]" started-at="2026-02-19T22:22:48 IST" name="initialiseDriver" finished-at="2026-02-19T22:22:50 IST" duration-ms="1773" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -46,22 +44,76 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialiseDriver -->
-        <test-method signature="verifyUserLoginWithValidUsernameAndInvalidPassword()[pri:3, instance:testscript.LoginTest@1f9f6368]" started-at="2026-02-17T11:30:12 IST" name="verifyUserLoginWithValidUsernameAndInvalidPassword" description="Validating user login with Valid Username and Invalid Password" finished-at="2026-02-17T11:30:15 IST" duration-ms="3143" status="PASS">
+        <test-method signature="verifyUserIsAbleToSearchNews()[pri:2, instance:testscript.ManageNewsTest@7d322cad]" started-at="2026-02-19T22:22:50 IST" name="verifyUserIsAbleToSearchNews" description="Searching already added news" finished-at="2026-02-19T22:22:52 IST" duration-ms="2187" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyUserLoginWithValidUsernameAndInvalidPassword -->
-        <test-method is-config="true" signature="driverQuit(org.testng.ITestResult)[pri:0, instance:testscript.LoginTest@1f9f6368]" started-at="2026-02-17T11:30:15 IST" name="driverQuit" finished-at="2026-02-17T11:30:16 IST" duration-ms="483" status="PASS">
+        </test-method> <!-- verifyUserIsAbleToSearchNews -->
+        <test-method is-config="true" signature="driverQuit(org.testng.ITestResult)[pri:0, instance:testscript.ManageNewsTest@7d322cad]" started-at="2026-02-19T22:22:52 IST" name="driverQuit" finished-at="2026-02-19T22:22:52 IST" duration-ms="0" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=verifyUserLoginWithValidUsernameAndInvalidPassword status=SUCCESS method=LoginTest.verifyUserLoginWithValidUsernameAndInvalidPassword()[pri:3, instance:testscript.LoginTest@1f9f6368] output={null}]]]>
+                <![CDATA[[TestResult name=verifyUserIsAbleToSearchNews status=SUCCESS method=ManageNewsTest.verifyUserIsAbleToSearchNews()[pri:2, instance:testscript.ManageNewsTest@7d322cad] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- driverQuit -->
-      </class> <!-- testscript.LoginTest -->
+        <test-method is-config="true" signature="initialiseDriver(java.lang.String)[pri:0, instance:testscript.ManageNewsTest@7d322cad]" started-at="2026-02-19T22:22:52 IST" name="initialiseDriver" finished-at="2026-02-19T22:22:54 IST" duration-ms="1719" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialiseDriver -->
+        <test-method signature="verifyUserIsAbleToResetTheNews()[pri:3, instance:testscript.ManageNewsTest@7d322cad]" started-at="2026-02-19T22:22:54 IST" name="verifyUserIsAbleToResetTheNews" description="Resetting the already added news" finished-at="2026-02-19T22:22:56 IST" duration-ms="1801" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyUserIsAbleToResetTheNews -->
+        <test-method is-config="true" signature="driverQuit(org.testng.ITestResult)[pri:0, instance:testscript.ManageNewsTest@7d322cad]" started-at="2026-02-19T22:22:56 IST" name="driverQuit" finished-at="2026-02-19T22:22:56 IST" duration-ms="6" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyUserIsAbleToResetTheNews status=SUCCESS method=ManageNewsTest.verifyUserIsAbleToResetTheNews()[pri:3, instance:testscript.ManageNewsTest@7d322cad] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- driverQuit -->
+      </class> <!-- testscript.ManageNewsTest -->
+      <class name="testscript.AdminUsersTest">
+        <test-method is-config="true" signature="initialiseDriver(java.lang.String)[pri:0, instance:testscript.AdminUsersTest@6cd24612]" started-at="2026-02-19T22:22:37 IST" name="initialiseDriver" finished-at="2026-02-19T22:22:39 IST" duration-ms="2134" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialiseDriver -->
+        <test-method signature="verifyAdminIsAbleToSearchUser()[pri:2, instance:testscript.AdminUsersTest@6cd24612]" started-at="2026-02-19T22:22:39 IST" name="verifyAdminIsAbleToSearchUser" description="Verifying if admin is able to search an existing user" finished-at="2026-02-19T22:22:44 IST" duration-ms="5023" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyAdminIsAbleToSearchUser -->
+        <test-method is-config="true" signature="driverQuit(org.testng.ITestResult)[pri:0, instance:testscript.AdminUsersTest@6cd24612]" started-at="2026-02-19T22:22:44 IST" name="driverQuit" finished-at="2026-02-19T22:22:44 IST" duration-ms="2" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyAdminIsAbleToSearchUser status=SUCCESS method=AdminUsersTest.verifyAdminIsAbleToSearchUser()[pri:2, instance:testscript.AdminUsersTest@6cd24612] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- driverQuit -->
+      </class> <!-- testscript.AdminUsersTest -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>

@@ -11,9 +11,9 @@
     <classes>
       <class name="testscript.LoginTest">
         <methods>
-          <include name="verifyUserLoginWithInvalidUsernameAndValidPassword"/>
-          <include name="initialiseDriver"/>
+          <include name="verifyUserLoginWithInvalidUsernameAndInvalidPassword" invocation-numbers="1"/>
           <include name="driverQuit"/>
+          <include name="initialiseDriver"/>
         </methods>
       </class> <!-- testscript.LoginTest -->
     </classes>

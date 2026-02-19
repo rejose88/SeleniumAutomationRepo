@@ -10,6 +10,7 @@
 		</groups>
 		<classes>
 			<class name="testscript.LoginTest"> </class>
+			<class name="testscript.HomeTest"> </class>
 		</classes>
 	</test>
 </suite> 

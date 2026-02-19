@@ -28,8 +28,8 @@ public class HandlingFileUploads extends Base {
 		WebElement select_pdf= driver.findElement(By.id("pickfiles"));
 		select_pdf.click();
 		
-		StringSelection selection= new StringSelection("C:\\Users\\REENA\\git\\SeleniumAutomationRepo\\automationcourse\\src\\test\\resources\\Assignment 8_Inheritance.pdf");
-		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(selection, null);
+		StringSelection selection= new StringSelection("C:\\Users\\REENA\\git\\SeleniumAutomationRepo\\automationcourse\\src\\test\\resources\\Assignment 8_Inheritance.pdf"); // copy the file path to clipboard
+		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(selection, null); //  set the file path from clipboard to the file upload pop up using Robot class
 		
 		Robot r=new Robot();
 		r.delay(2500);

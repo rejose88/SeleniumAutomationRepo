@@ -22,10 +22,6 @@ public class PageUtility {
 		object.selectByIndex(index);
 	}
 
-	public void sendKeys(WebElement element, String text) {
-		element.sendKeys(text);
-	}
-
 	public void dragAndDrop(WebDriver driver, WebElement source, WebElement target) {
 		Actions actions = new Actions(driver);
 		actions.dragAndDrop(source, target).build().perform();
@@ -34,6 +30,16 @@ public class PageUtility {
 	public void mouseHover(WebDriver driver, WebElement element) {
 		Actions actions = new Actions(driver);
 		actions.moveToElement(element).build().perform();
+	}
+	
+	public void doubleClick(WebDriver driver, WebElement element) {
+		Actions actions = new Actions(driver);
+		actions.doubleClick(element).build().perform();
+	}
+	
+	public void rightClick(WebDriver driver, WebElement element) {
+		Actions actions = new Actions(driver);
+		actions.contextClick(element).build().perform();
 	}
 
 }

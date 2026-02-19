@@ -12,8 +12,7 @@ import com.aventstack.extentreports.Status;
 import automationcore.Base;
 import utilities.ExtentReportUtility;
 
-public class Listners extends Base implements ITestListener { // implement ITestListener interface to listen to the
-																// events of the test execution and generate the report
+public class Listners extends Base implements ITestListener {
 
 	ExtentTest test;
 	ExtentReports extent = ExtentReportUtility.createExtentReports();
@@ -70,9 +69,7 @@ public class Listners extends Base implements ITestListener { // implement ITest
 		}
 	}
 
-	public void onTestSkipped(ITestResult result) { // called when a test case is skipped during execution, allowing you
-													// to log the skip event in the report and provide information about
-													// the skipped test case.
+	public void onTestSkipped(ITestResult result) {
 
 		ITestListener.super.onTestSkipped(result);
 		extentTest.get().log(Status.SKIP, "Test Skipped");
@@ -98,6 +95,6 @@ public class Listners extends Base implements ITestListener { // implement ITest
 	public void onFinish(ITestContext context) {
 
 		ITestListener.super.onFinish(context);
-		extent.flush(); //
+		extent.flush();
 	}
 }

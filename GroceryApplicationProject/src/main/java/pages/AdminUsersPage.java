@@ -4,8 +4,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.Select;
-
 import utilities.PageUtility;
 import utilities.WaitUtility;
 
@@ -62,9 +60,9 @@ public class AdminUsersPage {
 		return this;
 	}
 
-	public AdminUsersPage selectUserTypeForNewUser() {
+	public AdminUsersPage selectUserTypeForNewUser(String new_user_type) {
 
-		pageutility.selectDropdownWithValue(user_type_dropdown, "staff"); // calling pageutility class
+		pageutility.selectDropdownWithValue(user_type_dropdown, new_user_type); // calling pageutility class
 		return this;
 
 	}
@@ -80,13 +78,15 @@ public class AdminUsersPage {
 		return this;
 	}
 
-	public AdminUsersPage enterTheUserNameToBeSearched() {
-		username_search_field.sendKeys("aaron.suresh");
+	public AdminUsersPage enterTheUserNameToBeSearched(String username_to_be_searched) {
+		username_search_field.sendKeys(username_to_be_searched);
 		return this;
 	}
 
-	public AdminUsersPage selectUserTypeForTheUserToBeSearched() {
-		pageutility.selectDropdownWithVisibleText(user_type_select_field, "Staff"); // calling pageutility class
+	public AdminUsersPage selectUserTypeForTheUserToBeSearched(String user_type_to_be_searched) {
+		pageutility.selectDropdownWithVisibleText(user_type_select_field, user_type_to_be_searched); // calling
+																										// pageutility
+																										// class
 		return this;
 
 	}
